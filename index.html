@@ -1,0 +1,87 @@
+<!doctype html>
+<html lang="ko">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#fff3b7">
+  <title>꾸욱 체크 — 월별 데일리 투두리스트</title>
+  <link rel="preconnect" href="https://cdn.jsdelivr.net">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/orioncactus/pretendard/dist/web/static/pretendard.css">
+  <link rel="stylesheet" href="styles.css">
+  <script src="script.js" defer></script>
+</head>
+<body>
+  <div class="duck-field" aria-hidden="true">
+    <img class="floating-duck duck-one" src="assets/duck.png" alt="">
+    <img class="floating-duck duck-two" src="assets/duck.png" alt="">
+    <img class="floating-duck duck-three" src="assets/duck.png" alt="">
+  </div>
+
+  <div class="page-shell">
+    <header class="site-header">
+      <a class="brand" href="./" aria-label="꾸욱 체크 홈">
+        <span class="brand-mark"><img src="assets/duck.png" alt=""></span>
+        <span>꾸욱<span class="brand-accent">체크</span><span class="brand-dot">.</span></span>
+      </a>
+      <span class="header-note">매일 조금씩, 나답게 해내기 <span aria-hidden="true">✦</span></span>
+      <button class="today-button" id="todayButton" type="button">오늘로 돌아가기 <span aria-hidden="true">↗</span></button>
+    </header>
+
+    <main>
+      <section class="intro" aria-labelledby="introTitle">
+        <div class="eyebrow"><span class="eyebrow-dot"></span> MY DAILY PLANNER</div>
+        <h1 id="introTitle">오늘의 할 일,<br><span>꾸욱 체크해요!</span></h1>
+        <p>작은 할 일부터 차근차근. 나의 하루를 노란 달력에 담아보세요.</p>
+        <div class="intro-decoration" aria-hidden="true">✳</div>
+      </section>
+
+      <section class="planner" aria-label="월별 데일리 투두리스트">
+        <div class="planner-top">
+          <div>
+            <span class="section-kicker">YOUR MONTH AT A GLANCE</span>
+            <h2 id="monthTitle"></h2>
+          </div>
+          <div class="month-controls">
+            <button class="nav-button" id="prevMonth" type="button" aria-label="이전 달">‹</button>
+            <button class="nav-button" id="nextMonth" type="button" aria-label="다음 달">›</button>
+          </div>
+        </div>
+
+        <div class="planner-grid">
+          <div class="calendar-panel">
+            <div class="calendar-heading">
+              <span><span class="legend-dot"></span> 할 일이 있는 날</span>
+              <span class="calendar-hint">날짜를 눌러 하루를 살펴보세요</span>
+            </div>
+            <div class="weekday-row" aria-hidden="true">
+              <span>일</span><span>월</span><span>화</span><span>수</span><span>목</span><span>금</span><span>토</span>
+            </div>
+            <div id="calendarGrid" class="calendar-grid" role="grid" aria-label="월별 달력"></div>
+            <div class="calendar-footer"><span aria-hidden="true">✦</span> 좋은 하루는 작은 체크에서 시작돼요.</div>
+          </div>
+
+          <aside class="task-panel" aria-labelledby="selectedDateTitle">
+            <div class="task-topline"><span class="task-label">DAILY TO-DO</span><span class="task-sparkle" aria-hidden="true">✳</span></div>
+            <h3 id="selectedDateTitle"></h3>
+            <p class="task-subtitle" id="dayMessage"></p>
+            <div class="progress-area">
+              <div class="progress-text"><strong id="progressLabel">0 / 0 완료</strong><span id="progressPercent">0%</span></div>
+              <div class="progress-track" role="progressbar" aria-label="선택한 날짜의 완료율" aria-valuemin="0" aria-valuemax="100" aria-valuenow="0" id="progressBar"><span id="progressFill"></span></div>
+            </div>
+            <div class="tasks-heading"><h4>할 일 목록</h4><span id="taskCount">0개</span></div>
+            <ul class="task-list" id="taskList" aria-live="polite"></ul>
+            <form class="add-form" id="taskForm">
+              <label class="sr-only" for="taskInput">새 할 일</label>
+              <input id="taskInput" type="text" maxlength="100" placeholder="새로운 할 일을 적어주세요" autocomplete="off" required>
+              <button type="submit" aria-label="할 일 추가">+</button>
+            </form>
+            <p class="form-hint">Enter 키를 눌러도 추가할 수 있어요.</p>
+          </aside>
+        </div>
+      </section>
+    </main>
+
+    <footer class="site-footer"><span>오늘도 잘하고 있어요. 꾸욱! <span aria-hidden="true">♥</span></span><span>© 꾸욱체크</span></footer>
+  </div>
+</body>
+</html>
